@@ -1,0 +1,22 @@
+{% extends "todo/main-base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+    <div>
+        <h2>Add a new Todo:</h2>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" value="Submit" class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
